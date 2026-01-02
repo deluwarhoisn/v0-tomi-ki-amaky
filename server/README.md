@@ -3,38 +3,38 @@
 ## Setup Instructions
 
 ### 1. Install Dependencies
-```bash
+\`\`\`bash
 cd server
 npm install
-```
+\`\`\`
 
 ### 2. Configure Environment Variables
 Create a `.env` file based on `.env.example`:
-```
+\`\`\`
 PORT=5000
 MONGODB_URI=your-mongodb-connection-string
 JWT_SECRET=your-secret-key
 CLIENT_URL=http://localhost:3000
-```
+\`\`\`
 
 ### 3. Create Admin User
 After starting the server, register a user with email `admin@taskflow.com` and then manually update their role to `admin` in MongoDB:
 
-```javascript
+\`\`\`javascript
 db.users.updateOne(
   { email: "admin@taskflow.com" },
   { $set: { role: "admin" } }
 )
-```
+\`\`\`
 
 ### 4. Run the Server
-```bash
+\`\`\`bash
 # Development
 npm run dev
 
 # Production
 npm start
-```
+\`\`\`
 
 ## API Endpoints
 
